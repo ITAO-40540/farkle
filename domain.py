@@ -47,7 +47,7 @@ class ChanceEngine:
 
 # this is the syntax for using inheritance
 # Dice will inherit the attributes and methods of ChanceEnging
-class Dice(ChanceEngine):
+class Die(ChanceEngine):
     def __init__(self, values, initial_value=None):
         super().__init__(values)
         if initial_value:
@@ -74,7 +74,7 @@ class Coin(ChanceEngine):
         return self.random_value()
 
 
-class StandardDice(Dice):
+class StandardDie(Die):
 
     def __init__(self, initial_value=None):
         self._values = range(1,7)

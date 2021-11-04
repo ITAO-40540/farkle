@@ -14,9 +14,9 @@ game = Game([player, player2])
 print(f"{player.first_name} is {player.age()} years old")
 print(game)
 
-dice = StandardDice()
+dice = StandardDie()
 print(dice.current_value())
-dice2 = StandardDice(5)
+dice2 = StandardDie(5)
 print(dice2.current_value())
 
 coin = Coin()

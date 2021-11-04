@@ -36,7 +36,7 @@ class Game:
 
 class ChanceEngine:
 
-    def __init__(self, values=[]):
+    def __init__(self, values=[], initial_value=None):
         self._values = values
 
     def random_value(self):
@@ -48,10 +48,20 @@ class ChanceEngine:
 # this is the syntax for using inheritance
 # Dice will inherit the attributes and methods of ChanceEnging
 class Dice(ChanceEngine):
+    def __init__(self, values, initial_value=None):
+        super().__init__(values)
+        if initial_value:
+            self._current_value = initial_value
+        else:
+            self._current_value = self.roll()
+
 
     def roll(self):
         print("roll()")
         return self.random_value()
+
+    def current_value(self):
+        return self._current_value
 
 
 class Coin(ChanceEngine):
@@ -66,8 +76,11 @@ class Coin(ChanceEngine):
 
 class StandardDice(Dice):
 
-    def __init__(self):
+    def __init__(self, initial_value=None):
         self._values = range(1,7)
+        super().__init__(self._values, initial_value)
+
+
 
 
 class ScoringSet:

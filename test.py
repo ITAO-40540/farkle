@@ -15,6 +15,10 @@ print(f"{player.first_name} is {player.age()} years old")
 print(game)
 
 dice = StandardDice()
+print(dice.current_value())
+dice2 = StandardDice(5)
+print(dice2.current_value())
+
 coin = Coin()
 
 for i in range(10):

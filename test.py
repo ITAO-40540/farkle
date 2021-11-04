@@ -14,13 +14,11 @@ game = Game([player, player2])
 print(f"{player.first_name} is {player.age()} years old")
 print(game)
 
-dice = StandardDie()
-print(dice.current_value())
-dice2 = StandardDie(5)
-print(dice2.current_value())
-
-coin = Coin()
+die = StandardDie()
+print(die.current_value())
+die2 = StandardDie(5)
+print(die2.current_value())
 
 for i in range(10):
     # loop 10 times, and print the result of the dice.roll() method
-    print(dice.roll())
+    print(die.roll())

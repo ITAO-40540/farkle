@@ -24,6 +24,10 @@ class Game:
     # the input is stored in an instance variable (called an attribute)
     def __init__(self, players = []):
         self._players = players
+        self._current_player = players[0]
+
+    def players(self):
+        return self._players
 
     # a function that needs to be completed
     def next_player(self):
@@ -31,7 +35,7 @@ class Game:
         pass
 
     def current_player(self):
-        pass
+        return self._current_player
 
 
 class ChanceEngine:

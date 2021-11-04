@@ -31,8 +31,11 @@ class Game:
 
     # a function that needs to be completed
     def next_player(self):
-        # `pass` allows you to have an empty execution block
-        pass
+        if self._current_player == self._players[-1]:
+            self._current_player = self._players[0]
+        else:
+            current_index = self._players.index(self._current_player)
+            self._current_player = self._players[current_index + 1]
 
     def current_player(self):
         return self._current_player
@@ -57,8 +60,7 @@ class Die(ChanceEngine):
         if initial_value:
             self._current_value = initial_value
         else:
-            self._current_value = self.roll()
-
+            self.roll()
 
     def roll(self):
         self._current_value = self.random_value()
@@ -177,3 +179,15 @@ class ScoringSet:
         for die in self._dice:
             self._dice_as_integers.append(int(die.current_value()))
         self._dice_as_integers.sort()
+
+
+class Roll:
+
+    def __init__(self, dice):
+        self._dice = dice
+
+    def roll(self):
+        for die in self._dice:
+            die.roll()
+
+

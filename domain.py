@@ -171,5 +171,5 @@ class ScoringSet:
     def dice_to_integers(self):
         self._dice_as_integers = []
         for die in self._dice:
-            self._dice_as_integers.append(int(die.value()))
+            self._dice_as_integers.append(int(die.current_value()))
         self._dice_as_integers.sort()

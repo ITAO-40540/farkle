@@ -1,8 +1,8 @@
 # import everything from the file domain.py
 from domain import *
 import os
-
 os.system("clear")
+
 
 # this is how you create objects from a class file
 player = Player("jonathan", 23)

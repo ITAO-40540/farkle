@@ -57,8 +57,7 @@ class Die(ChanceEngine):
 
 
     def roll(self):
-        print("roll()")
-        return self.random_value()
+        self._current_value = self.random_value()
 
     def current_value(self):
         return self._current_value
@@ -79,8 +78,6 @@ class StandardDie(Die):
     def __init__(self, initial_value=None):
         self._values = range(1,7)
         super().__init__(self._values, initial_value)
-
-
 
 
 class ScoringSet:

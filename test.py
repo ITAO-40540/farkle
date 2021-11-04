@@ -21,4 +21,5 @@ print(die2.current_value())
 
 for i in range(10):
     # loop 10 times, and print the result of the dice.roll() method
-    print(die.roll())
+    die.roll()
+    print(die.current_value())

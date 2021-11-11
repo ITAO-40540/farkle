@@ -1,6 +1,8 @@
 # import everything from the file domain.py
-from domain import *
+from models.dice import StandardDie
+from models.scoring_set import ScoringSet
 import os
+
 os.system("clear")
 
 # create a dictionary that encapsulates the rules for aquiring points

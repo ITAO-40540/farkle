@@ -2,6 +2,7 @@
 
 # pycharm setup files
 .idea/
+__venv__/
 .DS_Store
 # Byte-compiled / optimized / DLL files
 __pycache__/

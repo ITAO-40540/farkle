@@ -1,5 +1,8 @@
 # import everything from the file domain.py
-from domain import *
+from models.dice import *
+from models.roll import Roll
+from models.scoring_set import ScoringSet
+
 import os
 os.system("clear")
 dice = []

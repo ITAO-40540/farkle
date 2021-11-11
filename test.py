@@ -1,5 +1,8 @@
 # import everything from the file domain.py
-from domain import *
+import models.game
+from models.player import Player
+from models.game import Game
+
 import os
 os.system("clear")
 

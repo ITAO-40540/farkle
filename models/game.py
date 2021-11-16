@@ -1,4 +1,4 @@
-import hashlib
+# import hashlib
 
 
 class Game:
@@ -9,7 +9,7 @@ class Game:
         self._players = players
         self._current_player = players[0]
 
-        self.code = str(hashlib.md5())[-6:-1]
+        # self.code = str(hashlib.md5())[-6:-1]
 
     def players(self):
         return self._players

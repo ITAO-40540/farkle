@@ -1,4 +1,5 @@
-from domain import *
+from models.game import Game
+from models.player import Player
 import os
 os.system("clear")
 

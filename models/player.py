@@ -7,7 +7,7 @@ class Player:
         # the `_` signifies that the attribute should be treated as private
         self._age = age
 
-    # these are functions that are hooked into the object but their strucure is a plain old function
+    # these are functions that are hooked into the object but their structure is a plain old function
     def age(self):
         return self._age
 

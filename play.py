@@ -1,5 +1,7 @@
 from models.game import Game
 from models.player import Player
+from models.dice import StandardDie
+from models.roll import Roll
 import os
 os.system("clear")
 
@@ -22,6 +24,11 @@ for i in range(number_of_players):
 # create game from list of players
 game = Game(players)
 
+# create dice
+dice = []
+for i in range(6):
+    dice.append(StandardDie())
+
 # The game object know everything we need for managing players
 print(game)
 
@@ -31,3 +38,12 @@ for player in game.players():
     print(f"-- {player.first_name}")
 
 print(f"current player is {game.current_player().first_name}")
+
+print("Roll the dice!")
+
+roll = Roll(dice)
+roll.roll()
+
+print(f"{game.current_player().first_name} rolled:")
+for d in dice:
+    print(d.current_value())

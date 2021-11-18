@@ -10,12 +10,7 @@ class GameInitiationError(Exception):
         self.message = message
 
 
-class Game(Base):
-    __tablename__ = 'games'
-    id = Column(Integer, primary_key=True)
-    code = Column(String)
-    round = Column(Integer, default=1)
-
+class Game:
     # the input is stored in an instance variable (called an attribute)
     def __init__(self, players):
         if len(players) == 1:

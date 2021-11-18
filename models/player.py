@@ -2,17 +2,9 @@ from db.base import *
 from sqlalchemy import Column, DateTime, String, Integer, ForeignKey, func
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy import event
-from models.game import Game
 
 
 class Player:
-    __tablename__ = 'players'
-    id = Column(Integer, primary_key=True)
-    first_name = Column(String, nullable=False)
-    last_name = Column(String)
-
-    game_id = Column(Integer, ForeignKey('games.id'))
-    game = relationship(Game, backref=backref('players', uselist=True, cascade='delete,all'))
 
     # __init__() gets executed when Player() is called
     # not necessary to include but very useful in most cases

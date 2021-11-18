@@ -1,21 +1,21 @@
+from sqlalchemy import Column, DateTime, String, Integer, ForeignKey
+from sqlalchemy.orm import relationship, backref
+from db.base import *
 import hashlib
+# player is an argument you can use with Game() >> Game(players=...)
 
 
 class GameInitiationError(Exception):
-    """Raised when an operation attempts a state transition that's not
-    allowed.
-
-    Attributes:
-        previous -- state at beginning of transition
-        next -- attempted new state
-        message -- explanation of why the specific transition is not allowed
-    """
-
     def __init__(self, message):
         self.message = message
 
-class Game:
-    # player is an argument you can use with Game() >> Game(players=...)
+
+class Game(Base):
+    __tablename__ = 'games'
+    id = Column(Integer, primary_key=True)
+    code = Column(String)
+    round = Column(Integer, default=1)
+
     # the input is stored in an instance variable (called an attribute)
     def __init__(self, players):
         if len(players) == 1:

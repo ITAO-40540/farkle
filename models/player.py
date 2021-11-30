@@ -7,15 +7,16 @@ from models.game import Game
 class Player(Base):
     __tablename__ = 'players'
     id = Column(Integer, primary_key=True)
-    first_name = Column(String, nullable=False)
-    level = Column(Integer, default=0)
+    first_name = Column(String)
+    # level = Column(Integer, default=0)
 
     game_id = Column(Integer, ForeignKey('games.id'))
-    game = relationship(Game, backref("players"))
+    game = relationship(Game, backref=backref('players', uselist=True, cascade='delete,all'))
 
 
     # __init__() gets executed when Player() is called
     # not necessary to include but very useful in most cases
+
     def __init__(self, first_name, age=None):
         # self is a hook into the object created. It's how you add attributes
         self.first_name = first_name

@@ -24,7 +24,7 @@ class Game(Base):
 
         self.players = players
         self._current_player = players[0]
-        self.code = str(hashlib.md5())[:6]
+        self.code = str(hashlib.md5())[-7:-1]
         self.round = 1
 
     def players(self):

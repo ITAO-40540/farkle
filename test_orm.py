@@ -1,6 +1,5 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from sqlalchemy.orm import configure_mappers
 from db.base import *
 import os
 
@@ -20,3 +19,10 @@ Base.metadata.create_all(engine)
 
 # you can use this variable to add and commit your changes
 ses = session()
+
+player = Player("Jack")
+player2 = Player("Jill")
+
+game = Game(players=[player,player2])
+
+print(game.id, game.code)

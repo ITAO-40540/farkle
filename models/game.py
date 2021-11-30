@@ -1,4 +1,4 @@
-from sqlalchemy import Column, DateTime, String, Integer, ForeignKey
+from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import relationship, backref
 from db.base import *
 import hashlib
@@ -10,13 +10,19 @@ class GameInitiationError(Exception):
         self.message = message
 
 
-class Game:
+class Game(Base):
+
+    __tablename__ = 'games'
+    id = Column(Integer, primary_key=True)
+    round = Column(Integer, default=1)
+    code = Column(String)
+
     # the input is stored in an instance variable (called an attribute)
     def __init__(self, players):
         if len(players) == 1:
             raise GameInitiationError("Games must include 2 or more players.")
 
-        self._players = players
+        self.players = players
         self._current_player = players[0]
         self.code = str(hashlib.md5())[:6]
         self.round = 1

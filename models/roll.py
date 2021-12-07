@@ -15,6 +15,10 @@ class Roll:
         return str
 
     def is_valid(self):
+
+        if len(self._dice) == 0:
+            self.validation_errors.append('There are no valid dice present')
+            return False
         for die in self._dice:
             if type(die).__name__ != 'StandardDie':
                 self.validation_errors.append('One or more die are not standard')

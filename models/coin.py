@@ -1,3 +1,4 @@
+from models.dice import ChanceEngine
 class Coin(ChanceEngine):
 
     def __init__(self):

@@ -1,6 +1,7 @@
 # random is used in ChanceEnging
 import random
 
+
 class ChanceEngine:
 
     def __init__(self, values=[], initial_value=None):

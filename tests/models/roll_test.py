@@ -24,3 +24,13 @@ class TestRoll:
         roll = Roll([])
         assert not roll.is_valid()
         assert roll.validation_errors[0] == 'There are no valid dice present'
+
+    def test_validate_more_than_one_die(self):
+        roll = Roll([StandardDie])
+        assert not roll.is_valid()
+        assert roll.validation_errors[0] == 'Less than 2 dice present'
+
+    def test_multiple_validation_errors(self):
+        roll = Roll([Coin])
+        assert not roll.is_valid()
+        assert len(roll.validation_errors) == 2

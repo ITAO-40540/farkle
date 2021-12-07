@@ -16,9 +16,9 @@ class Roll:
 
     def is_valid(self):
         for die in self._dice:
-            if type(die) != 'StandardDie':
-                self.validation_errors << 'One or more die are not standard'
+            if type(die).__name__ != 'StandardDie':
+                self.validation_errors.append('One or more die are not standard')
                 return False
-            self.validation_errors = []
-            return True
+        self.validation_errors = []
+        return True
 

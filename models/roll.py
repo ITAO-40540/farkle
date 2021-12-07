@@ -15,7 +15,6 @@ class Roll:
         return str
 
     def is_valid(self):
-
         if len(self._dice) == 0:
             self.validation_errors.append('There are no valid dice present')
             return False
@@ -26,3 +25,8 @@ class Roll:
         self.validation_errors = []
         return True
 
+    def validate_dice_present(self):
+        pass
+
+    def validate_valid_dice(self):
+        pass

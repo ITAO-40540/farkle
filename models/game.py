@@ -32,12 +32,12 @@ class Game(Base):
 
     # a function that needs to be completed
     def next_player(self):
-        if self._current_player == self._players[-1]:
+        if self._current_player == self.players[-1]:
             self.__increment_round()
-            self._current_player = self._players[0]
+            self._current_player = self.players[0]
         else:
-            current_index = self._players.index(self._current_player)
-            self._current_player = self._players[current_index + 1]
+            current_index = self.players.index(self._current_player)
+            self._current_player = self.players[current_index + 1]
 
     def current_player(self):
         return self._current_player

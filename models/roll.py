@@ -20,6 +20,7 @@ class Roll:
 
         # run validations
         self.validate_dice_present()
+        self.validate_enough_dice()
         self.validate_valid_dice()
 
         #if any errors, not valid
@@ -37,3 +38,7 @@ class Roll:
         for die in self._dice:
             if type(die).__name__ != 'StandardDie':
                 self.validation_errors.append('One or more die are not standard')
+
+    def validate_enough_dice(self):
+        if len(self._dice) < 2:
+            self.validation_errors.append('Less than 2 dice present')

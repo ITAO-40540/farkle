@@ -21,3 +21,6 @@ class TestRoll:
         assert len(roll.validation_errors) == 0
 
     def test_empty_dice_is_invalid(self):
+        roll = Roll([])
+        assert not roll.is_valid()
+        assert roll.validation_errors[0] == 'There are no valid dice present'
